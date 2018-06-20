@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html lang="en" ng-app="scotchTodo">
+    <meta charset="utf-8">
+    <head>
+        <title name="Pooja's website!">
+        </title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+        <script src="https://code.angularjs.org/1.6.1/angular-resource.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+        <script src="index.js"></script>
+    </head>
+    <body ng-controller="mainController">
+        <div class="container">
+        <header class="header">
+            <a class="link-title" href="index.html">Weather Forecast for Enonic</a>
+        </header>
+        <nav class="menu">
+            <a href="index.html">Oslo</a> &nbsp; &nbsp; &nbsp;
+            <a href="index.html">London</a> &nbsp; &nbsp; &nbsp;
+            <a href="index.html">Minsk</a> &nbsp; &nbsp; &nbsp;
+     </nav>
+     
+       <aside>
+           <h1>Side Bar</h1>
+       </aside>
+       <p> I am </p>{{myWelcome}}<br><br>
+        <div> {{getAllTempData}}
+
+        </div>
+        <div> {{m}}</div>
+       <footer>
+           &copy; 2018 Weather forecast &nbsp; Designed by Pooja More
+       </footer>
+        </div>
+    </body>
+</html>

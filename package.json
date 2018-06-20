@@ -1,0 +1,28 @@
+{
+  "name": "weather-forecast",
+  "version": "1.0.0",
+  "description": "weather forecast web application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poojacmore/weather-forecast.git"
+  },
+  "keywords": [
+    "weather",
+    "web",
+    "app"
+  ],
+  "author": "Pooja",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/poojacmore/weather-forecast/issues"
+  },
+  "homepage": "https://github.com/poojacmore/weather-forecast/src/index.html",
+  "dependencies": {
+    "request": "^2.87.0",
+    "express": "~4.7.2"
+  }
+}
