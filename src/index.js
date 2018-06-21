@@ -1,4 +1,4 @@
-var scotchTodo = angular.module('scotchTodo', [])
+var myApp = angular.module('weatherForecast', [])
 
 .controller('mainController', function($http, $scope) {
   console.log('I have been initialised!!!!');
@@ -24,76 +24,3 @@ var scotchTodo = angular.module('scotchTodo', [])
       }
     }
 });
-
-/*let request = require('request');
-
-let apiKey = 'd57340965d97d90d44229540a3c7ad78';
-let city = 'portland';
-let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`
-
-request(url, function (err, response, body) {
-  if(err){
-    console.log('error:', error);
-  } else {
-    console.log('body:', body);
-    let weather = JSON.parse(body);
-    let message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-    console.log(message);
-    //console.log('this is response', response);
-  }
-});*/
-
-/*.factory('OsloWeatherResource', function ($resource, ENV) {
-  var apiKey = process.env.API_KEY;
-  //var apiKey = 'd57340965d97d90d44229540a3c7ad78';
-  var city = oslo;
-  return ('http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}');
-});*/
-
-/*.factory('WeatherForecast', function ($resource, ENV) {
-  var apiKey = 'd57340965d97d90d44229540a3c7ad78';
-  var city;
-  var url = 'http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}';
-  return $resource(ENV.apiServer + '/api/missions.json', [function () {
-  }],
-    {
-      queryOslo: {
-        method: 'GET',
-        url: ENV.apiServer + '/api/missions.json'
-      },
-      queryLondon: {
-        method: 'GET',
-        url: ENV.apiServer + '/api/missions.json'
-      },
-      queryMynx: {
-        method: 'GET',
-        url: ENV.apiServer + '/api/missions/:id.json'
-      }
-    });
-});*/
-
-/*$scope.formData = {};
-    var apiKey = 'd57340965d97d90d44229540a3c7ad78';
-    var city = 'portland';
-    var url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`;
-
-
-    OsloWeatherResource.get(function (res) {
-      $scope.selectedObservation = res;
-      console.log('this is sel', $scope.selectedObservation);
-      //$scope.$broadcast('popupReady', res.data.observation);
-    });*/
-
-    // when landing on the page, get all todos and show them
-    /*$http.get(url, function (err, response, body) {
-      console.log('I am called!!', url);
-      if(err){
-        console.log('error:', error);
-      } else {
-        console.log('body:', body);
-        let weather = JSON.parse(body);
-        $scope.message = `It's ${weather.main.temp} degrees in ${weather.name}!`;
-        console.log($scope.message);
-        //console.log('this is response', response);
-      }
-    });*/
