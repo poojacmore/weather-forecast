@@ -1,26 +1,41 @@
-var myApp = angular.module('weatherForecast', [])
+var myApp = angular.module('weatherForecast', ['ui.bootstrap'])
 
 .controller('mainController', function($http, $scope) {
-  console.log('I have been initialised!!!!');
-  var apiKey = 'd57340965d97d90d44229540a3c7ad78';
+
+
+  var apiKey = '4047aa7ca0f9aa90fdeedfd96a4e5eaf';
   var cityLondon = parseInt(2643743);
   var cityOslo = parseInt(6453366);
   var cityMynx = parseInt(625144);
   $scope.myWelcome = [];
-  console.log('I am found key', apiKey);
-  var url = 'http://api.openweathermap.org/data/2.5/group?id='+cityLondon+ ',' +cityOslo+ ','+cityMynx+'&appid='+apiKey+'&units=metric';
-  $http.get(url)
-    .then(function(response) {
+
+  var url = 'http://api.openweathermap.org/data/2.5/group?id='+cityOslo+ ',' +cityLondon+ ','+cityMynx+'&appid='+apiKey+'&units=metric';
+
+  $http.get(url).then(function(response) {
+    //$scope.currentTime = moment().format();
+    console.log('Request successful', $scope.currentTime);
+  angular.forEach(response.data.list, function (list) {
+    $scope.myWelcome.push(list);
+  })
+}).then(function(text) {
+  console.log('Request successful', text);
+}).catch(function(error) {
+  console.log('Request failed', error)
+}); 
+
+  window.onload = function() {
+    setInterval(function() {
+      $http.get(url).then(function(response) {
+        $scope.currentTime = moment().format();
+        console.log('Request successful', $scope.currentTime);
       angular.forEach(response.data.list, function (list) {
         $scope.myWelcome.push(list);
       })
-    });
-
-    $scope.getAllTempData = function () {
-      var length = $scope.myWelcome.length;
-      for (var i = 0; i< length; i++) {
-        $scope.m = $scope.myWelcome[i].weather;
-        console.log('I am temp', m);
-      }
-    }
+    }).then(function(text) {
+      console.log('Request successful', text);
+    }).catch(function(error) {
+      console.log('Request failed', error)
+    }); 
+   }, 60000);
+  }
 });

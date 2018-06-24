@@ -26,20 +26,6 @@ body {
     font-size: 14px;
 }
 
-.menu a hover{
-    color: #ecf2f3;
-}
-
-#home-image img{
-    width: 100%;
-}
-
-aside {
-    float: left;
-    width: 120px;
-    padding: 30px 0 0 40px;
-    
-}
 
 .link-title {
     text-decoration: none;
@@ -104,34 +90,7 @@ footer a {
     clear: both;
 }
 
-
-#contact #form {
-    width: 500px;
-    padding: 10px 10px 10px 10px;
-    margin: 0 auto;
-    box-shadow: 0 9px 13px 5px;
-    border-radius: 5px;
-}
-
 .page-heading {
     text-align: center;
     margin-bottom: 20px;
-}
-
-#contact #form input {
-    width: 100%;
-    border-radius: 5px;
-    height: 20px;
-    background: #D6D6D6;
-}
-
-#contact #form #message {
-    width: 100%;
-    border-radius: 5px;
-    background: #D6D6D6;
-}
-
-#contact #form #submit {
-    height: 30px;
-    background: rgb(59, 118, 135);
 }

@@ -8,7 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.6.1/angular-resource.js"></script>
         <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
         <script src="index.js"></script>
     </head>
@@ -18,35 +18,46 @@
             <a class="link-title" href="index.html">Enonic Weather Forecast</a>
         </header>
         <nav class="menu">
-            <a href="index.html">Oslo</a> &nbsp; &nbsp; &nbsp;
-            <a href="index.html">London</a> &nbsp; &nbsp; &nbsp;
-            <a href="index.html">Minsk</a> &nbsp; &nbsp; &nbsp;
+            <a href="index.html">Home</a> &nbsp; &nbsp; &nbsp;
         </nav>
 
-        <accordion close-others="oneAtTime">
-            <accordion ng-repeat="obj in myWelcome">
-                <accordion-heading>
+        <accordion close-others="oneAtATime">
+            <accordion-group is-open="true" ng-repeat="obj in myWelcome">
+                <accordion-heading ng-if="obj">
                 {{obj.name}}
                 </accordion-heading>
+                
                 <div ng-if="obj">
-                    <ul>
-                        <li ng-repeat="weather in obj.weather">{{weather.main}}
+                    <ul title="Weather Details">
+                        <li name="Weathet condition" ng-repeat="weather in obj.weather">{{weather.main}}
                             <br>
                             {{weather.description}}
                             <br>
-                            <div ng-if="weather.icon">
-                                    <img src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+                            <div ng-if="weather">
+                                    <img ng-if="weather.icon" src="http://openweathermap.org/img/w/{{weather.icon}}.png">
                             </div>
+
                         </li>
+                        </ul>
+                        <ul title="Temperature Details">
+                        <ul>{{obj.main.temp}} &#8451;
+                                <br>                          
+                        </ul>
+                            <ul>{{obj.main.pressure}}
+                                    <br>                          
+                            </ul>
+                                <li>{{obj.main.humidity}}
+                                        <br>                          
+                                    </li>
+                                    <li>{{obj.main.temp_max}} &#8451;
+                                            <br>                          
+                                        </li>
+                                        <li>{{obj.main.temp_min}} &#8451;
+                                                <br>                          
+                                            </li>
                     </ul>
-                    <!--<ul>
-                        <li ng-repeat="main in obj.main">{{main}}
-                            <br>                          
-                        </li>
-                    </ul>
-                    !-->
                 </div>
-            </accordion>
+            </accordion-group>
         </accordion>
        <footer>
            &copy; 2018 Weather forecast &nbsp; Designed by Pooja More
