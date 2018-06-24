@@ -97,21 +97,42 @@ footer a {
 
 .column {
     float: left;
-    padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
+    padding: 20px;
+    height: 200px; /* Should be removed. Only for demonstration */
 }
 
-.left, .right {
-  width: 25%;
+.h5Custom {
+    color: #3b7687;
+    text-align: center !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    line-height: 20px !important;
+    font-style: italic !important;
 }
 
-.middle {
-  width: 50%;
+.left,.middle {
+    width: 35%;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
+.right {
+    width: 30%;
+}
+
+.pCustom {
+    font-size: 15px !important;
+    margin: 0px !important;
+    color: #869843 !important;
+    font-family: "Arial Narrow", "Myriad Pro";
+    font-weight: normal !important; 
+    text-align: center !important;
+}
+
+ul {
+    list-style-type: none;
+    font-size: 15px !important;
+    margin: 0px !important;
+    color: #869843 !important;
+    font-family: "Arial Narrow", "Myriad Pro";
+    font-weight: normal !important; 
+    text-align: center !important;
 }

@@ -23,45 +23,43 @@
         </nav>
 
         <accordion close-others="oneAtATime">
-            <accordion-group is-open="true" ng-repeat="obj in myArray">
-                <accordion-heading ng-if="obj">
-                {{obj.name}}
-                </accordion-heading>
-                
-                <div ng-if="obj">
-                    <ul title="Weather Details">
-                        <li ng-repeat="weather in obj.weather">{{weather.main}}
-                            <br>
-                            {{weather.description}}
-                            <br>
+                <accordion-group is-open="true" ng-repeat="obj in myArray">
+                   <accordion-heading ng-if="obj">
+                    {{obj.name}}
+                    </accordion-heading>          
+                    <div ng-if="obj">
+                     <div class="row">
+                       <div class="column left">
+                         <h5 class="h5Custom">Weather Condition</h5>
+                           <ul title="Weather Details">
+                             <li ng-repeat="weather in obj.weather">{{weather.main}}
+                             <br>
+                             {{weather.description}}
+                             <br>
                             <div ng-if="weather">
-                                    <img ng-if="weather.icon" src="http://openweathermap.org/img/w/{{weather.icon}}.png">
+                            <img ng-if="weather.icon" src="http://openweathermap.org/img/w/{{weather.icon}}.png">
                             </div>
-
-                        </li>
-                        </ul>
-                        <ul>
-                        <ul title="Temperature details">{{obj.main.temp}} &#8451;
-                                <br>                          
-                        </ul>
-                            <ul>
-                                    <li>{{obj.main.temp_max}} &#8451;
-                                            <br>                          
-                                        </li>
-                                        <li>{{obj.main.temp_min}} &#8451;
-                                                <br>                          
-                                            </li>                         
-                            </ul>
-                            <ul>
-                                    <li>{{currentTime}}
-                                            <br>                          
-                                        </li>
-
-                            </ul>                 
-                    </ul>
-                </div>
-            </accordion-group>
-        </accordion>
+                           </li>
+                           </ul>
+                        </div>
+                        <div class="column middle">
+                        <h5 class="h5Custom">Temperature Details</h5>
+                           <p class="pCustom">Temperature &nbsp;  {{obj.main.temp}} &#8451;</p> <br>
+                          <p class="pCustom">Maximum Temp  &nbsp;  {{obj.main.temp_max}} &#8451;</p> <br>
+                          <p class="pCustom">Minimum Temp  &nbsp;  {{obj.main.temp_min}} &#8451;</p> <br>
+                        </div>
+                        <div class="column right">
+                        <h5 class="h5Custom">Weather Updated</h5>
+                          <ul>
+                       <li>{{currentTime}}
+                       <br>                          
+                       </li>
+                      </ul>    
+                     </div>
+                     </div>
+                     </div>
+                         </accordion-group>
+                     </accordion>
        <footer>
            &copy; 2018 Weather forecast &nbsp; Designed by Pooja More
        </footer>
