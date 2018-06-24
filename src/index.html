@@ -14,7 +14,7 @@
         <script src="index.js"></script>
     </head>
     <body ng-controller="mainController">
-        <div class="container">
+        <div class="container" data-ng-init="init()">
         <header class="header">
             <a class="link-title" href="index.html">Enonic Weather Forecast</a>
         </header>
@@ -23,7 +23,7 @@
         </nav>
 
         <accordion close-others="oneAtATime">
-            <accordion-group is-open="true" ng-repeat="obj in myWelcome">
+            <accordion-group is-open="true" ng-repeat="obj in myArray">
                 <accordion-heading ng-if="obj">
                 {{obj.name}}
                 </accordion-heading>
@@ -41,21 +41,23 @@
                         </li>
                         </ul>
                         <ul>
-                        <ul>{{obj.main.temp}} &#8451;
+                        <ul title="Temperature details">{{obj.main.temp}} &#8451;
                                 <br>                          
                         </ul>
-                            <ul>{{obj.main.pressure}}
-                                    <br>                          
-                            </ul>
-                                <li>{{obj.main.humidity}}
-                                        <br>                          
-                                    </li>
+                            <ul>
                                     <li>{{obj.main.temp_max}} &#8451;
                                             <br>                          
                                         </li>
                                         <li>{{obj.main.temp_min}} &#8451;
                                                 <br>                          
-                                            </li>
+                                            </li>                         
+                            </ul>
+                            <ul>
+                                    <li>{{currentTime}}
+                                            <br>                          
+                                        </li>
+
+                            </ul>                 
                     </ul>
                 </div>
             </accordion-group>
