@@ -8,6 +8,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
         <script src="https://code.angularjs.org/1.6.1/angular-resource.js"></script>
         <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
         <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
         <script src="index.js"></script>
@@ -29,7 +30,7 @@
                 
                 <div ng-if="obj">
                     <ul title="Weather Details">
-                        <li name="Weathet condition" ng-repeat="weather in obj.weather">{{weather.main}}
+                        <li ng-repeat="weather in obj.weather">{{weather.main}}
                             <br>
                             {{weather.description}}
                             <br>
@@ -39,7 +40,7 @@
 
                         </li>
                         </ul>
-                        <ul title="Temperature Details">
+                        <ul>
                         <ul>{{obj.main.temp}} &#8451;
                                 <br>                          
                         </ul>

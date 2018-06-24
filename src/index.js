@@ -12,7 +12,7 @@ var myApp = angular.module('weatherForecast', ['ui.bootstrap'])
   var url = 'http://api.openweathermap.org/data/2.5/group?id='+cityOslo+ ',' +cityLondon+ ','+cityMynx+'&appid='+apiKey+'&units=metric';
 
   $http.get(url).then(function(response) {
-    //$scope.currentTime = moment().format();
+    $scope.currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss");
     console.log('Request successful', $scope.currentTime);
   angular.forEach(response.data.list, function (list) {
     $scope.myWelcome.push(list);
@@ -26,7 +26,7 @@ var myApp = angular.module('weatherForecast', ['ui.bootstrap'])
   window.onload = function() {
     setInterval(function() {
       $http.get(url).then(function(response) {
-        $scope.currentTime = moment().format();
+        $scope.currentTime = moment().format("dddd, MMMM Do YYYY, h:mm:ss");
         console.log('Request successful', $scope.currentTime);
       angular.forEach(response.data.list, function (list) {
         $scope.myWelcome.push(list);
