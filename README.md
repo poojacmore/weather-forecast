@@ -5,4 +5,4 @@
 2. Traverse to weather-forecast folder <br>
 3. type "npm install"<br>
 4. type "node server.js"<br>
-5. Open browser and type, "http://localhost:8080/index.html" to see result
+5. Open browser to see result
