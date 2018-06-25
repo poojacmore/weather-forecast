@@ -23,7 +23,7 @@
         </nav>
 
         <accordion close-others="oneAtATime">
-                <accordion-group is-open="true" ng-repeat="obj in myArray">
+                <accordion-group ng-repeat="obj in myArray" ng-init="status.open = $first" is-open="status.open">
                    <accordion-heading ng-if="obj">
                     {{obj.name}}
                     </accordion-heading>          

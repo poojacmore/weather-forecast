@@ -1,9 +1,11 @@
 var express  = require('express');
 var app      = express();                               // create our app w/ express
 
-// configuration =================
+//Config
 
-app.use(express.static(__dirname + '/src'));                 // set the static files location /public/img will be /img for users
-// listen (start app with node server.js) ======================================
+//static director path setup
+app.use(express.static(__dirname + '/src'));
+
+//Listen application on port 8080
 app.listen(8080);
-console.log("App listening on port 8080");
+console.log("Weather App listening on port 8080");

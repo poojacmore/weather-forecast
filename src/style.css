@@ -98,7 +98,7 @@ footer a {
 .column {
     float: left;
     padding: 20px;
-    height: 200px; /* Should be removed. Only for demonstration */
+    height: 150px; /* Should be removed. Only for demonstration */
 }
 
 .h5Custom {
