@@ -8,6 +8,6 @@ var open = require("open");
 app.use(express.static(__dirname + '/src'));
 
 //Listen application on port 8080
-open("http://localhost:8080/index.html");
 app.listen(8080);
+open("http://localhost:8080/index.html");
 console.log("Weather App listening on port 8080");
